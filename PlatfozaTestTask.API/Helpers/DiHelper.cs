@@ -33,5 +33,10 @@ namespace PlatfozaTestTask.API.Helpers
         {
             services.AddTransient<UserResolver>();
         }
+
+        public static void AddScoped(this IServiceCollection services)
+        {
+            services.AddScoped<IIdentityService, IdentityService>();
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace PlatfozaTestTask.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton();
+            services.AddScoped();
             services.AddHelpers();
             services.AddRepositories();
             services.AddResolvers();
