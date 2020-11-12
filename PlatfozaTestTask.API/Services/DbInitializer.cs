@@ -65,21 +65,24 @@ namespace PlatfozaTestTask.API.Services
                     Name = "Test",
                     BirthDate = new DateTime(1998, 11, 10),
                     Amount = 100,
-                    Account_Id = accounts[0].Id
+                    Account_Id = accounts.First(a 
+                        => a.Login == "Test").Id
                 },
                 new CreateUserDTO
                 {
                     Name = "Nikolay",
                     BirthDate = new DateTime(1990, 9, 4),
                     Amount = 200,
-                    Account_Id = accounts[1].Id
+                    Account_Id = accounts.First(a 
+                        => a.Login == "Nikolay").Id
                 },
                 new CreateUserDTO
                 {
                     Name = "Admin",
                     BirthDate = new DateTime(1988, 7, 1),
                     Amount = 300,
-                    Account_Id = accounts[2].Id
+                    Account_Id = accounts.First(a 
+                        => a.Login == "Admin").Id
                 }
             };
             foreach (var userDto in userDtoList) 
