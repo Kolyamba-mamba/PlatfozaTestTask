@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -57,8 +58,10 @@ namespace PlatfozaTestTask.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUserinfo()
         {
+            var accountId = HttpContext.User.Claims.ElementAt(1).Value;
             var username = HttpContext.User.Identity.Name;
-            var user = await _userRepository.Get().FirstOrDefaultAsync(u => u.Name == username);
+            var user = await _userRepository.Get().FirstOrDefaultAsync(u => u.Name == username 
+                                                                            && u.Account.Id.ToString() == accountId);
             if (user == null) return BadRequest();
             var userDto = _mapper.Map<User, UserDTO>(user);
             return Ok(userDto);
