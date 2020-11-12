@@ -16,10 +16,11 @@ namespace PlatfozaTestTask.API.Services
         public async Task<AuthResult> AuthenticationUserAsunc(string login, string password, IRepository<Account> repository)
         {
             var authResult = new AuthResult();
-            var account = await repository.Get().FirstOrDefaultAsync(a => a.Login == login && a.Password == password);
+            var account = await repository.Get().FirstOrDefaultAsync(a => a.Login == login 
+                                                                          && a.Password == password);
             if (account != null)
             {
-                authResult.Token = GenerateJwtToken(login);
+                authResult.Token = GenerateJwtToken(account.Login, account.Id.ToString());
                 authResult.IsSuccess = true;
             }
             else
@@ -30,11 +31,12 @@ namespace PlatfozaTestTask.API.Services
             return await Task.FromResult(authResult);
         }
 
-        private string GenerateJwtToken(string login)
+        private string GenerateJwtToken(string login, string guid)
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, login)
+                new Claim(ClaimsIdentity.DefaultNameClaimType, login),
+                new Claim(ClaimsIdentity.DefaultIssuer, guid)
             };
 
             var jwt = new JwtSecurityToken(
