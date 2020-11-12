@@ -27,7 +27,7 @@ namespace PlatfozaTestTask.API.Services
         {
             if (!_accountRepository.Get().Any())
                 AddAccount();
-            else if (!_userRepository.Get().Any() && _accountRepository.Get().Any()) 
+            if (!_userRepository.Get().Any() && _accountRepository.Get().Any()) 
                 AddUser();
         }
 
