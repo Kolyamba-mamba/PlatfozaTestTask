@@ -45,6 +45,20 @@ namespace PlatfozaTestTask.API
                     };
                 });
             
+            
+            services.AddCors(options =>
+            {
+                // Определение политики CORS как "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("http://localhost")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin()
+                        .SetIsOriginAllowed(x => true);
+                });
+            });
+            
             services.AddSingleton();
             services.AddScoped();
             services.AddHelpers();
@@ -63,6 +77,7 @@ namespace PlatfozaTestTask.API
             app.ApplicationServices.GetService<DbInitializer>().Initialize();
             sp.CloseSession();
             
+            app.UseCors("default");
             
             if (env.IsDevelopment())
             {
