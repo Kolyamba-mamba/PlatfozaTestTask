@@ -1,0 +1,8 @@
+{
+    "/user/*": {
+        "target" : "http://platfozatesttaskapi-test.us-west-2.elasticbeanstalk.com",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

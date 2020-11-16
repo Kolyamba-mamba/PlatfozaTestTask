@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <h3>Test Task</h3>
+    <button 
+    class="btn btn-dark my-2 my-sm-0" 
+    type="submit"
+    (click)="signOut()">Logout</button>
+</nav>
+
+<div class="col-xs-1 text-center">
+    <h2>Information of {{ user.name }}</h2><br/>
+    <p>Name: {{ user.name }}</p><br>
+    <p>Birth Date: {{ user.birthDate }}</p><br>
+    <p>Amount: {{ user.amount }}</p><br>
+</div>

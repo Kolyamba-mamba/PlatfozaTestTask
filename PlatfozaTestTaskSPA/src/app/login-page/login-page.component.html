@@ -1,0 +1,50 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+        <h2>Sign in Page</h2>
+        <div id="formLogin"> 
+            <form 
+            [formGroup]="loginForm" 
+            (ngSubmit)="onSubmit()" 
+            class="login-form">
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input 
+                    formControlName="login"
+                    type="text" 
+                    class="form-control" 
+                    id="login" 
+                    placeholder="Login">
+                </div>
+
+                <span class="badge badge-warning"
+                *ngIf="loginForm.get('login').invalid 
+                && loginForm.get('login').touched">Login must not be empty</span>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                    formControlName="password"
+                    type="password" 
+                    class="form-control" 
+                    id="password" 
+                    placeholder="Password">
+                </div>
+                
+                <span class="badge badge-warning"
+                *ngIf="loginForm.get('password').invalid 
+                && loginForm.get('password').touched">Password must not be empty</span>
+
+                <div class="login-action">
+                    <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    [disabled]="loginForm.invalid || loginForm.disabled">Sign in</button>
+                </div>
+
+                <span class="badge badge-danger"
+                *ngIf="!isSuccess">Invalid parameters entered</span>
+            </form> 
+        </div>
+    </div>
+</div>
+  
