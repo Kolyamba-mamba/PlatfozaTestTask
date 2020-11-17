@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserinfoPageComponent } from './userinfo-page/userinfo-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ExceptionPageComponent } from './exception-page/exception-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    UserinfoPageComponent
+    UserinfoPageComponent,
+    ErrorPageComponent,
+    ExceptionPageComponent
   ],
   imports: [
     BrowserModule,
