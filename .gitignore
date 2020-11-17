@@ -7,3 +7,7 @@ obj/
 /.idea/
 riderModule.iml
 /_ReSharper.Caches/
+/PlatfozaTestTask.API/aws-beanstalk-tools-defaults.json
+/PlatfozaTestTask.API/Properties/PublishProfiles/FolderProfile.pubxml
+/PlatfozaTestTask.API/Properties/PublishProfiles/FolderProfile.pubxml.user
+/PlatfozaTestTask.API/PlatfozaTestTask.API.csproj.user
