@@ -1,8 +1,8 @@
 # Используемые технологии: 
 * База данных: MSSQL;
 * ORM: NHibernate;
-* Server: ASP.NET Core 3.1
-* Client: Angilar 11.0.0
+* Server: ASP.NET Core 3.1;
+* Client: Angilar 11.0.0ю
 
 # Данные для входа:
 * Login: Test, Password: Test;
@@ -17,7 +17,8 @@
 
 # Работа
 ## AWS
-API развернуто в AWS и находится по адресу: http://platfozatesttaskapi-test.us-west-2.elasticbeanstalk.com
+API развернуто в AWS и находится по адресу: http://platfozatesttaskapi-test.us-west-2.elasticbeanstalk.com.  
+Клиентская часть также развернута в AWS и находится по адресу: http://my-platfoza-angular-client.s3-website.us-east-2.amazonaws.com.
 
 ## Docker
 Для локального запуска API воспользуйтесь в корне приложения командой `docker-compose up`, оно будет развернуто на `http://localhost:49000/`.
