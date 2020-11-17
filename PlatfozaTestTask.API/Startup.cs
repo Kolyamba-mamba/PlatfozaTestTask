@@ -51,7 +51,7 @@ namespace PlatfozaTestTask.API
                 // Определение политики CORS как "default"
                 options.AddPolicy("default", policy =>
                 {
-                    policy.WithOrigins("http://localhost")
+                    policy.WithOrigins("http://localhost", "http://my-platfoza-angular-client.s3-website.us-east-2.amazonaws.com")
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowAnyOrigin()
